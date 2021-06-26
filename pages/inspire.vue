@@ -2,7 +2,7 @@
   <v-row>
     <v-col class="text-center">
       <img
-        src="/v.png"
+        src="/nuxt-web/v.png"
         alt="Vuetify.js"
         class="mb-5"
       >
