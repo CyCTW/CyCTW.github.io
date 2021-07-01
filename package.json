@@ -10,8 +10,12 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
+    "aos": "^3.0.0-beta.6",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "d3": "^7.0.0",
+    "nuxt": "^2.15.3",
+    "vue-observe-visibility": "^1.0.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3",

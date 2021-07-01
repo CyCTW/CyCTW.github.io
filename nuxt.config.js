@@ -25,10 +25,26 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: "~/plugins/aos",
+      ssr: false
+    },
+    {
+      src: "~/plugins/observer",
+      ssr: false
+    },
+    {
+      src: "~/plugins/bootstrap-vue",
+    }
+    // { 
+    //   src: '~/plugins/move.js',
+    //   mode: 'client' 
+    // }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -70,5 +86,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: [
+      '@sindresorhus/slugify',
+      '@sindresorhus/transliterate',
+      'd3',
+      'internmap',
+      'delaunator',
+      'robust-predicates'
+    ],
+  },
+  loading: {
+    color: 'black',
+    height: '5px'
   }
+
 }
