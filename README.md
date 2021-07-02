@@ -1,4 +1,5 @@
-# cyctw-nuxt
+![example workflow](https://github.com/cyctw/cyctw.github.io/actions/workflows/deploy.yml/badge.svg)
+# Cheng Yuan Chang's Personal Website
 
 ## Build Setup
 
@@ -18,3 +19,4 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
