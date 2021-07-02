@@ -4,12 +4,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: '/nuxt-web/'
+    base: '/'
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - cyctw-nuxt',
-    title: 'cyctw-nuxt',
+    title: 'ChengYuan-Chang',             
     htmlAttrs: {
       lang: 'en'
     },
@@ -19,7 +18,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/nuxt-web/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 

@@ -1,5 +1,6 @@
 <template>
   <span>
+
     <b-nav class="my-nav" vertical pills v-b-scrollspy:nav-scroller  style="position: fixed; top: 40vh">
       <b-nav-item href="#biography" >
           - BIOGRAPHY
@@ -14,51 +15,10 @@
         - EDUCATION
       </b-nav-item>
     </b-nav>
-    <!-- <v-navigation-drawer
-      fixed
-      permanent
-      color="transparent"
-    >
-      <div style="height: 100%" class="d-flex flex-column justify-center align-start">
-            <v-btn 
-                :rounded="selected_category === 'biography' ? true : false"  
-                :plain="selected_category === 'biography' ? false : true"  
-                href="#biography"
-                @click="check_category('biography')"
-              >
-                - BIOGRAPHY              
-              </v-btn>
-            <v-btn 
-                :rounded="selected_category === 'projects' ? true : false"  
-                :plain="selected_category === 'projects' ? false : true"  
-                href="#projects"
-                @click="check_category('projects')"
-              >
-                - PROJECTS              
-              </v-btn>
-            <v-btn
-                :rounded="selected_category === 'skilltree' ? true : false"  
-                :plain="selected_category === 'skilltree' ? false : true" 
-                href="#skilltree"
-                @click="check_category('skilltree')"
-              >
-                - PROFESSIONAL SKILLS              
-              </v-btn>
-
-            <v-btn 
-                :rounded="selected_category === 'education' ? true : false"  
-                :plain="selected_category === 'education' ? false : true"
-                href="#education"
-                @click="check_category('education')"
-              >
-                - EDUCATION              
-              </v-btn>
-            </div>
-    </v-navigation-drawer> -->
     <div class="banner">
       <v-parallax
         id="parallax-id"
-        src="/nuxt-web/bg.png"
+        src="/bgz.jpg"
         style="height: 100%"
       >
         <v-row
@@ -79,32 +39,48 @@
         </v-row>
       </v-parallax>
     </div>
-    <section id="biography"  class="py-16" style="background-color: black">
+    <section id="biography"  class="py-16">
       <v-container data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500">
+        <h1>BIOGRAPHY</h1>
         <v-row>
-          <v-col cols="12" md="6">
-              <h1>BIOGRAPHY</h1>
+          <v-col cols="12"  lg="6">
               
-              <pre>{{ self_introduction }}</pre>
+              <pre>{{ self_introduction_part_one }}</pre>
           </v-col>
-          <v-col cols="12" md="6">
+          <v-col cols="12" lg="6">
             <v-img 
-              class="ma-10"
-              src="/nuxt-web/bgn.jpg"
+              class="ma-5"
+              src="/me.jpg"
             ></v-img>
           </v-col>
         </v-row>
       </v-container>
     </section>
+    <section id="biography2"  class="py-16" style="background-color: black">
+      <v-container data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500">
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-img 
+              class="ma-5"
+              src="/bga.jpg"
+            ></v-img>
+          </v-col>
+          <v-col cols="12" md="6">
+              
+              <pre>{{ self_introduction_part_two }}</pre>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
 
-    <section id="projects"  class="my-16">
+    <section id="projects"  class="py-16">
       <v-container data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500">
         <h1 class="mb-10">PROJECTS                                                                                                       </h1>
           <v-row>
             <v-col
               cols="12"
               sm="6"
-              md="4"
+              md="6"
               v-for="card in card_contents" :key="card.title"
             >
               <v-hover
@@ -112,7 +88,7 @@
               >
                 <v-card 
                   class="d-flex ma-3 flex-column justify-space-between"
-                  height="250"
+                  :height="card_height"
                   outlined
                   tile
                   :elevation="hover ? 12 : 2"
@@ -141,6 +117,8 @@
                         outlined
                         rounded
                         text
+                        :href="card.link"
+                        target="_blank"
                       >
                         learn more
                       </v-btn>
@@ -151,7 +129,7 @@
           </v-row>
       </v-container>
     </section>
-    <section id="skilltree" class="my-16" style="background-color: black">
+    <section id="skilltree" class="py-16" style="background-color: black">
       <client-only placeholder="loading...">
         <skilltree />
       </client-only>
@@ -169,38 +147,74 @@ import Skilltree from '~/components/Skilltree.vue'
 import Timeline from '~/components/Timeline.vue'
 
 export default {
+  computed: {
+    card_height() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return 500
+        case 'sm':
+          return 400
+        case 'md':
+          return 300
+        case 'lg':
+          return 300
+      }
+    }
+  },
   data: function(){
     return {
-      self_introduction: `
-  Hello! My name is Cheng Yuan Chang. Now, I'm a freshment at graduate institude of Electrical Engineering \
-in National Taiwan Universiy, majored in CyberSecurity Program.
-   
+      self_introduction_part_one: `
+Hello! My name is Cheng Yuan Chang, a student from Taiwan. Now, I'm a graduate student \
+in National Taiwan Universiy, major in Electrical Engineering of Cybersecurity Program.
 
+In college, I majored in Computer Science in National Chiao Tung University. The life and experience there not only \
+help me build the strong basic of Computer Science domain knowledge, but also make me get interested in this domain. 
+
+I love learning new knowledge. There is almost infinite knowledge in the domain of Computer Science to learn. \
+From web frontend to web backend, I learned how to build a complete, claen, maintainable and scalable website from zero. \
+From data pipeline to training model, I learned how to transform gigantic raw data to the valuable prediction model or product. \
+There are more knowledge for me to explore, and I'm ready for that.`,
+
+      self_introduction_part_two: `
+Besides learning knowledge, I love to communicate, cooperate, and share with others. 
+
+In college, I cooperate with my classmate to develop final projects. During internship, \
+I work with my colleague. We discuss the new function's architecture and shared new knowledges with each other. \
+
+
+In the future, I want to be a software enginner to challenge new coming problems and work with other hard-working colleague.
+
+Last but not least, I hope I can use my expertise to help the world become better.
       `,
       card_contents: [
         { 
           'title': 'FoodExplorer', 'tags': ['React', 'Netlify', 'AWS Lambda', 'Google Maps API'],
-          'intro': 'An explorer fooder'
+          'link': 'https://github.com/CyCTW/FoodExplorer',
+          'intro': 'FoodExplorer is a web application that help people build their own custom food map. In this app, \
+                    you can store your favorite food and classify them into different category using custom icon. \
+                    Try it!',
         },
         { 
           'title': 'SurakartaAI', 'tags': ['Deep Reinforcement Learning', 'C++'],
-          'intro': 'Surakarta AI is an ref to Alpha go. Wow it s;as djfansiticirfdsf sd'},
-        {
-          'title': 'Parallel MCTS', 'tags': ['Monte Carlo Tree Search', 'pthread', 'MPI'],
-          'intro': 'Surakarta AI is an ref to Alpha go'
+          'link': 'https://github.com/CyCTW/Surakarta-AI',
+          'intro': 'In Surakarta AI, I implement different Reinforcement Learning Algorithm such as Monte Carlo Tree Search \
+                    and Deep Q Learning. Also, I implement a Deep Learning Network refer to Alpha-zero paper.\
+              '
         },
         {
-          'title': 'BBS Board', 'tags': [],
-          'intro': 'Surakarta AI is an ref to Alpha go. Wow it s;as djfansiticirfdsf sd'
+          'title': 'Parallel MCTS', 'tags': ['Monte Carlo Tree Search', 'pthread', 'openmp'],
+          'link': 'https://github.com/cyctw/Parallel-MCTS',
+          'intro': 'Parallel MCTS put emphasis on parallelizing the Monte Carlo Tree Search algorithm by exploiting thread \
+                    programming such as pthread and openmp. Finally, we successfully improve algorithm\'s \
+                    performance at the same time.'
         },
         {
-          'title': 'GCP Website', 'tags': [],
-          'intro': 'Surakarta AI is an ref to Alpha go. Wow it s;as djfansiticirfdsf sd'
-        },
-        {
-          'title': 'Amazon Deploy', 'tags': [],
-          'intro': 'Surakarta AI is an ref to Alpha go. Wow it s;as djfansiticirfdsf sd'
-        },
+          'title': 'BBS Board', 'tags': ['C++', 'AWS S3', 'Kafka', 'socket'],
+          'link': 'https://github.com/CyCTW/NCTU-Network-Programming', 
+          'intro': 'By using socket programming, I implement the functionality of BBS Board. Users can post, delete article in BBS board. \
+                    Furthermore, some tools like AWS S3 and Kafka are used for better overview.'
+        }
+        
       ]
     }
   },
@@ -227,7 +241,7 @@ in National Taiwan Universiy, majored in CyberSecurity Program.
 
 <style>
 .banner {
-  /* background-image: url("/nuxt-web/test.jpeg"); */
+  /* background-image: url("/test.jpeg"); */
   height: 100vh;
   /* background-position: center;
   background-repeat: no-repeat;
@@ -251,8 +265,10 @@ pre {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
     color: #f1f3aa;
 }
-.my-nav {
-
+@media screen and (max-width: 1400px) {
+  .my-nav {
+    display: none
+  }
 }
 </style>
 

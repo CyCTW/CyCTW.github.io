@@ -2,7 +2,7 @@
   <v-container>
     <h1>Professional Skills</h1>
 
-    <v-container class="d-flex flex-column align-center">
+    <v-container class="d-flex flex-column align-center my-6                                                                                   ">
       <v-card :width="card_width" class="ma-auto">
         <v-row class="ma-10">
           <v-col cols="12" sm="12" md="8">
@@ -12,7 +12,7 @@
                   :src="
                     selectedSkill.img_url
                       ? selectedSkill.img_url
-                      : '/nuxt-web/bga.jpg'
+                      : '/question.png'
                   "
                 />
               </v-avatar>
@@ -227,27 +227,26 @@ export default {
         .on('click', (event, d) => {
           d.children = d.children ? null : d._children
           if (!d.data.children) {
-            console.log('data', d.data)
             this.selectedSkill = {
               img_url: d.data.img,
               title: d.data.name,
               description: d.data.description,
               level: d.data.level,
             }
+          } else {
+            this.update(
+              d,
+              root,
+              dx,
+              dy,
+              height,
+              margin,
+              svg,
+              gNode,
+              gLink,
+              diagonal
+            )
           }
-          console.log('Dnode', d)
-          this.update(
-            d,
-            root,
-            dx,
-            dy,
-            height,
-            margin,
-            svg,
-            gNode,
-            gLink,
-            diagonal
-          )
         })
       // console.log({nodeEnter})
       const radius = 35
@@ -306,6 +305,7 @@ export default {
       const nodeUpdate = node
         .merge(nodeEnter)
         .transition(transition)
+        .attr('transform', (d) => console.log("tf", d))
         .attr('transform', (d) => `translate(${d.x},${d.y})`)
         .attr('fill-opacity', 1)
         .attr('stroke-opacity', 1)
@@ -457,13 +457,13 @@ export default {
             children: [
               {
                 name: 'React.js',
-                img: '/nuxt-web/logos/react.svg',
+                img: '/logos/react.svg',
                 level: 'Basic',
                 description: 'React',
               },
               {
                 name: 'Vue.js',
-                img: '/nuxt-web/logos/vue.png',
+                img: '/logos/vue.png',
                 level: 'Basic',
                 description: 'Vue',
               },
@@ -474,19 +474,19 @@ export default {
             children: [
               {
                 name: 'Flask',
-                img: '/nuxt-web/logos/flask.png',
+                img: '/logos/flask.png',
                 level: 'Familiar',
                 description: 'Flask',
               },
               {
                 name: 'FastAPI',
-                img: '/nuxt-web/logos/fastapi.jpg',
+                img: '/logos/fastapi.jpg',
                 level: 'Familiar',
                 description: 'FastAPI',
               },
               {
                 name: 'Golang',
-                img: '/nuxt-web/logos/golang.jpg',
+                img: '/logos/golang.jpg',
                 level: 'Basic',
                 description: 'Golang',
               },
@@ -497,19 +497,19 @@ export default {
             children: [
               {
                 name: 'Docker',
-                img: '/nuxt-web/logos/docker.jpg',
+                img: '/logos/docker.jpg',
                 level: 'Expert',
                 description: 'Docker',
               },
               {
                 name: 'Kubernetes',
-                img: '/nuxt-web/logos/k8s.png',
+                img: '/logos/k8s.png',
                 level: 'Basic',
                 description: 'K8s',
               },
               {
                 name: 'Ansible',
-                img: '/nuxt-web/logos/ansible.png',
+                img: '/logos/ansible.png',
                 level: 'Basic',
                 description: 'Ansible',
               },
@@ -520,13 +520,13 @@ export default {
             children: [
               {
                 name: 'Pytorch',
-                img: '/nuxt-web/logos/pytorch.png',
+                img: '/logos/pytorch.png',
                 level: 'Familiar',
                 description: 'Pytorch',
               },
               {
                 name: 'keras',
-                img: '/nuxt-web/logos/keras.png',
+                img: '/logos/keras.png',
                 level: 'Basic',
                 description: 'keras',
               },
@@ -537,13 +537,13 @@ export default {
             children: [
               {
                 name: 'Git',
-                img: '/nuxt-web/logos/git.png',
+                img: '/logos/git.png',
                 level: 'Familiar',
                 description: 'Git',
               },
               {
                 name: 'C++',
-                img: '/nuxt-web/logos/k8s.png',
+                img: '/logos/k8s.png',
                 level: 'Basic',
                 description: 'K8s',
               },
