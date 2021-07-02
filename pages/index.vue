@@ -45,7 +45,7 @@
             class="text-center scroll"
             cols="12"
           >
-            <a href="#biography"><span></span>Scroll</a>
+            <a class="mylink" href="#biography"><span></span>Scroll</a>
           </v-col>
         </v-row>
       </v-parallax>
@@ -281,7 +281,7 @@ pre {
     display: none
   }
 }
-.scroll a {
+.banner .scroll > .mylink {
   padding-top: 70px;
   position: absolute;
   bottom: 20px;
@@ -296,7 +296,7 @@ pre {
   text-decoration: none;
   transition: opacity .3s;
 }
-.scroll a span{
+.banner .scroll > .mylink span{
   position: absolute;
   top: 0;
   left: 50%;
