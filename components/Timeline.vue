@@ -36,14 +36,15 @@ export default {
               color: 'cyan',
               year: '2021 / 9',
               title: 'EECS, Graduate at National Taiwan University',
-              description: 'In 2021, I got admitted to National Taiwan University, majored in Cybersecurity program \
-                of Electrical Engineering. In graduate school, my research area is abount blockchain application.'
+              description: 'In 2021, I got admitted to National Taiwan University, \
+              majored in the Cybersecurity program of Electrical Engineering. \
+              In graduate school, my research area is about blockchain application.'
           },
           {
               color: 'green',
               year: '2021 / 1',
               title: 'Joinvest Backend Intern',
-              description: 'Joinvest is a startup company that aim to provide customers the chance to buy government \
+              description: 'Joinvest is a startup company that aims to provide customers the chance to buy government \
                 bond with little money. In this company, I am responsible for developing and maintaining the company\'s\
                 website and platform.'
           },
@@ -51,7 +52,7 @@ export default {
               color: 'red',
               year: '2020 / 7',
               title: 'Trend Micro Data Intern',
-              description: 'In Trend Micro, as a data science intern, my job is to help Deep Security team to develop a \
+              description: 'In Trend Micro, as a data science intern, my job is to help the Deep Security team to develop a \
                 Machine Learning model for abnormal detection of some specific metrics. '
           },
           {

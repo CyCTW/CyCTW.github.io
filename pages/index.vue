@@ -140,7 +140,7 @@
           </v-row>
       </v-container>
     </section>
-    <section id="skilltree" class="py-16" style="background-color: black">
+    <section id="skilltree" class="py-16" style="background-color: black" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500">
       <client-only placeholder="loading...">
         <skilltree />
       </client-only>
@@ -152,8 +152,6 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import Skilltree from '~/components/Skilltree.vue'
 import Timeline from '~/components/Timeline.vue'
 
@@ -176,24 +174,24 @@ export default {
     return {
       self_introduction_part_one: `
 Hello! My name is Cheng Yuan Chang, a student from Taiwan. Now, I'm a graduate student \
-in National Taiwan Universiy, major in Electrical Engineering of Cybersecurity Program.
+in the National Taiwan University, major in Electrical Engineering in the Cybersecurity Program.
 
-In college, I majored in Computer Science in National Chiao Tung University. The life and experience there not only \
+In college, I majored in Computer Science at the National Chiao Tung University. The life and experience there not only \
 help me build the strong basic of Computer Science domain knowledge, but also make me get interested in this domain. 
 
 I love learning new knowledge. There is almost infinite knowledge in the domain of Computer Science to learn. \
-From web frontend to web backend, I learned how to build a complete, claen, maintainable and scalable website from zero. \
-From data pipeline to training model, I learned how to transform gigantic raw data to the valuable prediction model or product. \
-There are more knowledge for me to explore, and I'm ready for that.`,
+From web frontend to web backend, I learned how to build a complete, clean, maintainable, and scalable website from zero. \
+From data pipeline to training model, I learned how to transform gigantic raw data into a valuable prediction model or product. \
+There is more knowledge for me to explore, and I'm ready for that.`,
 
       self_introduction_part_two: `
 Besides learning knowledge, I love to communicate, cooperate, and share with others. 
 
-In college, I cooperate with my classmate to develop final projects. During internship, \
-I work with my colleague. We discuss the new function's architecture and shared new knowledges with each other. \
+In college, I cooperate with my classmate to develop final projects. During the internship, \
+I work with my colleague. We discuss the new function's architecture and shared new knowledge with each other. \
 
 
-In the future, I want to be a software enginner to challenge new coming problems and work with other hard-working colleague.
+In the future, I want to be a software engineer to challenge new coming problems and work with other hard-working colleagues.
 
 Last but not least, I hope I can use my expertise to help the world become better.
       `,
@@ -242,8 +240,6 @@ Last but not least, I hope I can use my expertise to help the world become bette
     }
   },
   components: {
-    Logo,
-    VuetifyLogo,
     Skilltree,
     Timeline
   }
