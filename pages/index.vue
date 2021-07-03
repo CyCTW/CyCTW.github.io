@@ -38,16 +38,7 @@
           </v-col>
           
         </v-row>
-        <v-row
-          justify="end"
-        >
-          <v-col
-            class="text-center scroll"
-            cols="12"
-          >
-            <a class="mylink" href="#biography"><span></span>Scroll</a>
-          </v-col>
-        </v-row>
+        <a class="mylink" href="#biography"><span></span>Scroll</a>
       </v-parallax>
     </div>
     <section id="biography"  class="py-16">
@@ -277,10 +268,10 @@ pre {
     display: none
   }
 }
-.banner .scroll > .mylink {
+.banner .mylink {
   padding-top: 70px;
   position: absolute;
-  bottom: 20px;
+  bottom: 5px;
   left: 50%;
   z-index: 2;
   display: inline-block;
@@ -292,7 +283,7 @@ pre {
   text-decoration: none;
   transition: opacity .3s;
 }
-.banner .scroll > .mylink span{
+.banner .mylink span{
   position: absolute;
   top: 0;
   left: 50%;
